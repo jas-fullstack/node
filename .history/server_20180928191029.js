@@ -51,7 +51,7 @@ app.post("/posts",async (req , res)=>{
     }
 });
 
-router.get("/get_single_post/:id", async (req, res)=>{
+app.get("/get_single_post/:id", async (req, res)=>{
     
     try {    
         const posts = await Post.find({_id:req.param.id});
