@@ -19,7 +19,7 @@ router.get('/about', function (req, res) {
     res.send('About this wiki');
 })
 
-app.get("/posts", async (req,res)=>{
+routerapp.get("/posts", async (req,res)=>{
     
     try {
         const posts = await Post.find({}, (err, res)=>{
@@ -36,9 +36,9 @@ app.get("/posts", async (req,res)=>{
     }
 });
 //middle ware... 
-app.use(bodyParser.json());
+router.use(bodyParser.json());
 
-app.post("/posts",async (req , res)=>{
+router.post("/posts",async (req , res)=>{
     try {
         
     const post = new Post();
@@ -51,7 +51,7 @@ app.post("/posts",async (req , res)=>{
     }
 });
 
-app.get("/get_single_post/:id", async (req, res)=>{
+router.get("/get_single_post/:id", async (req, res)=>{
     
     try {    
         const posts = await Post.find({_id:req.param.id});
@@ -61,10 +61,10 @@ app.get("/get_single_post/:id", async (req, res)=>{
     }
 });
 
-app.listen(3001,function(){
+router.listen(3001,function(){
     console.log("server is runing on 3001");
 });
-app.post("users",async (req, res)=> {
+router.post("users",async (req, res)=> {
     const users = new Users();
   //  users.
 });

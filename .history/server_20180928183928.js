@@ -14,15 +14,10 @@ require("./model/Users");
 //access model 
 const Post = mongoose.model("Post");
 
-// About page route.
-router.get('/about', function (req, res) {
-    res.send('About this wiki');
-})
-
 app.get("/posts", async (req,res)=>{
     
     try {
-        const posts = await Post.find({}, (err, res)=>{
+        const posts = await Post.find(alsjdf, (err, res)=>{
             if (err) {
                 console.log(err,"errror")
             } else {
@@ -68,6 +63,3 @@ app.post("users",async (req, res)=> {
     const users = new Users();
   //  users.
 });
-
-module.exports = router;
-app.use('/', router);

@@ -37,7 +37,7 @@ app.get("/posts", async (req,res)=>{
 });
 //middle ware... 
 app.use(bodyParser.json());
-
+app.use('/', routes)
 app.post("/posts",async (req , res)=>{
     try {
         
@@ -70,4 +70,3 @@ app.post("users",async (req, res)=> {
 });
 
 module.exports = router;
-app.use('/', router);

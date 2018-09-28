@@ -70,4 +70,3 @@ app.post("users",async (req, res)=> {
 });
 
 module.exports = router;
-app.use('/', router);

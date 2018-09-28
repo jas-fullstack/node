@@ -15,7 +15,7 @@ require("./model/Users");
 const Post = mongoose.model("Post");
 
 // About page route.
-router.get('/about', function (req, res) {
+app.get('/about', function (req, res) {
     res.send('About this wiki');
 })
 
@@ -70,4 +70,3 @@ app.post("users",async (req, res)=> {
 });
 
 module.exports = router;
-app.use('/', router);
